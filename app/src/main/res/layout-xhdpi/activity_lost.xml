@@ -29,7 +29,8 @@
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Lost" />
+                android:text="Lost"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -47,7 +48,8 @@
         android:layout_weight=".1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Tags" />
+        android:text="Tags"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
     <EditText
         android:layout_weight=".1"
         android:layout_width="match_parent"
@@ -59,7 +61,8 @@
         android:layout_weight=".1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Get Location" />
+        android:text="Get Location"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +74,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Latitude"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
         <EditText
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -91,7 +95,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Longitude"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
         <EditText
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -111,7 +116,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Radius (meters)"
-            android:gravity="center_vertical|center" />
+            android:gravity="center_vertical|center"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
         <EditText
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -133,12 +139,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Back"
-            android:id="@+id/lostBackButton" />
+            android:id="@+id/lostBackButton"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:text="Search"
-            android:id="@+id/lostSearchButton" />
+            android:id="@+id/lostSearchButton"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
     </LinearLayout>
 </LinearLayout>
