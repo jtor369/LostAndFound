@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Lost And Found</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_what">WHAT</string>
+    <string name="menu_where">WHERE</string>
+    <string name="menu_when">WHEN</string>
+    <string name="lost_activity">Lost</string>
+    <string name="description">Describe the Item here</string>
+    <string name="found_activity">Found</string>
+    <string name="server_address">LostAndFoundServer.example</string>
+    <string name="server_subdir">LostFoundDBHelper</string>
+    <string name="server_search_script">lostSearch.php</string>
+    <string name="server_upload_script">uploadFound.php</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>

@@ -1,0 +1,36 @@
+-- Adminer 3.5.1 MySQL dump
+
+SET NAMES utf8;
+SET foreign_key_checks = 0;
+SET time_zone = 'SYSTEM';
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `refid` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `timestamp` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `thumbnail` text NOT NULL,
+  PRIMARY KEY (`refid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+/*!50100 PARTITION BY KEY () */;
+
+
+DROP TABLE IF EXISTS `location`;
+CREATE TABLE `location` (
+  `refid` int(11) NOT NULL,
+  `lat` double NOT NULL,
+  `lon` double NOT NULL,
+  `radius` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `tags`;
+CREATE TABLE `tags` (
+  `refid` int(11) NOT NULL,
+  `tag` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- 2016-05-30 00:06:09
