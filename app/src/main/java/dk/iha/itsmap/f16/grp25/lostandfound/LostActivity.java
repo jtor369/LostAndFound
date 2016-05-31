@@ -25,11 +25,13 @@ import dk.iha.itsmap.f16.grp25.lostandfound.Datacontainers.LocationSingleton;
 import dk.iha.itsmap.f16.grp25.lostandfound.Helpers.ServerService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LostActivity extends Activity {
 
     final static String SAVED_DESCRIPTION = "savedDescription";
+    final static String SAVED_TAGS = "savedTags";
     private static final String moduleName = "LostActivity";
     private Button search;
     private Button cancel;
@@ -37,6 +39,7 @@ public class LostActivity extends Activity {
     public final int THUMBNAIL = 667;
     private ImageView imageButton;
     private EditText description;
+    private EditText tagsEdit;
     private EditText latView;
     private EditText lonView;
     private EditText radView;
@@ -57,14 +60,18 @@ public class LostActivity extends Activity {
 
 
         search = (Button) findViewById(R.id.lostSearchButton);
-        cancel = (Button) findViewById(R.id.lostCancelButton);
+        cancel = (Button) findViewById(R.id.lostBackButton);
         locater = (Button) findViewById(R.id.locater);
         latView = (EditText) findViewById(R.id.txtLat);
         lonView = (EditText) findViewById(R.id.txtLon);
         radView = (EditText) findViewById(R.id.txtRad);
-        description = (EditText) findViewById(R.id.editLostDescriptionText);
+        //description = (EditText) findViewById(R.id.editLostDescriptionText);
         imageButton = (ImageView) findViewById(R.id.imageButton);
+
+        tagsEdit = (EditText) findViewById(R.id.editLostTagsText);
+
         search.setOnClickListener(new View.OnClickListener() {
+
 
             public void onClick(View v) {
                 senddata();
@@ -82,6 +89,8 @@ public class LostActivity extends Activity {
                 startTracking();
             }
         });
+
+        /*
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,9 +108,10 @@ public class LostActivity extends Activity {
                 }
             }
         });
+        */
 
-        if(savedInstanceState != null && description != null){
-            description.setText(savedInstanceState.getString(SAVED_DESCRIPTION));
+        if(savedInstanceState != null && tagsEdit != null){
+            tagsEdit.setText(savedInstanceState.getString(SAVED_TAGS,""));
         }
         SetupBroadcastReceivers();
     }
@@ -270,6 +280,7 @@ public class LostActivity extends Activity {
             case THUMBNAIL:
                 if (resultCode == RESULT_OK)
                 {
+                    /*
                     Bundle extras = data.getExtras();
                     Bitmap tn = (Bitmap) extras.get("data");
                     int width = tn.getWidth();
@@ -283,6 +294,7 @@ public class LostActivity extends Activity {
 
                     thumbnail = newBitmap;
                     imageButton.setImageBitmap(thumbnail);
+                    */
                 }
                 break;
             default:
@@ -324,14 +336,23 @@ public class LostActivity extends Activity {
         int userId = 01;
         Long timestamp = System.currentTimeMillis()/1000;
         getLocationFromText();
-        Item item = new Item(id, "" /*description.getText().toString()*/, userLocation, userId, timestamp, tags, null/*thumbnail*/);
+        String tagsString = "";
+
+        if (tagsEdit != null) {
+            tagsString = tagsEdit.getText().toString();
+        }
+        List<String> tags = Arrays.asList(tagsString.split(" "));
+
+        Item item = new Item(id, "", userLocation, userId, timestamp, tags, null);
         ServerService.searchFor(this,item);
     }
     public void onSaveInstanceState(Bundle savedInstanceState){
         Log.d(moduleName,"onSaveInstanceState();");
         super.onSaveInstanceState(savedInstanceState);
         //Save the fragment's instance
-        //savedInstanceState.putString(SAVED_DESCRIPTION, description.getText().toString());
+        if (tagsEdit != null) {
+            savedInstanceState.putString(SAVED_TAGS, tagsEdit.getText().toString());
+        }
     }
     @Override
     protected void onDestroy() {

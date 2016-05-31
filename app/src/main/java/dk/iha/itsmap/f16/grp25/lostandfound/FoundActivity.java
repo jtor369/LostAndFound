@@ -25,12 +25,14 @@ import dk.iha.itsmap.f16.grp25.lostandfound.Datacontainers.LocationSingleton;
 import dk.iha.itsmap.f16.grp25.lostandfound.Helpers.ServerService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FoundActivity extends Activity {
     private static final String moduleName = "FoundActivity";
 
     final static String SAVED_DESCRIPTION = "savedDescription";
+    final static String SAVED_TAGS = "savedTags";
     private Button search;
     private Button cancel;
     private Button locater;
@@ -41,6 +43,7 @@ public class FoundActivity extends Activity {
     private boolean isTracking = false;
     private ImageView imageButton;
     private EditText description;
+    private EditText tagsEdit;
     private EditText latView;
     private EditText lonView;
     private EditText radView;
@@ -59,14 +62,16 @@ public class FoundActivity extends Activity {
         setContentView(R.layout.activity_found);
 
 
-        search = (Button) findViewById(R.id.foundSearchButton);
-        cancel = (Button) findViewById(R.id.foundCancelButton);
+        search = (Button) findViewById(R.id.foundSubmitButton);
+        cancel = (Button) findViewById(R.id.foundBackButton);
         locater = (Button) findViewById(R.id.locater);
         latView = (EditText) findViewById(R.id.txtLat);
         lonView = (EditText) findViewById(R.id.txtLon);
         radView = (EditText) findViewById(R.id.txtRad);
         description = (EditText) findViewById(R.id.editFoundDescriptionText);
         imageButton = (ImageView) findViewById(R.id.imageButton);
+
+        tagsEdit = (EditText) findViewById(R.id.editFoundTagsText);
 
         search.setOnClickListener(new View.OnClickListener() {
 
@@ -105,7 +110,8 @@ public class FoundActivity extends Activity {
             }
         });
         if(savedInstanceState != null && description != null){
-            description.setText(savedInstanceState.getString(SAVED_DESCRIPTION));
+            description.setText(savedInstanceState.getString(SAVED_DESCRIPTION, ""));
+            tagsEdit.setText(savedInstanceState.getString(SAVED_TAGS, ""));
         }
         SetupBroadcastReceivers();
     }
@@ -276,6 +282,13 @@ public class FoundActivity extends Activity {
             descr = description.getText().toString();
         }
 
+        String tagsString = "";
+        if (tagsEdit != null)
+        {
+            tagsString = tagsEdit.getText().toString();
+        }
+        List<String> tags = Arrays.asList(tagsString.split(" "));
+
         Item item = new Item(id,descr, userLocation, userId, timestamp, tags, thumbnail);
         ServerService.storeItem(this,item);
     }
@@ -284,6 +297,7 @@ public class FoundActivity extends Activity {
         //Save the fragment's instance
         if (description != null) {
             savedInstanceState.putString( SAVED_DESCRIPTION, description.getText().toString() );
+            savedInstanceState.putString( SAVED_TAGS, tagsEdit.getText().toString() );
         }
     }
     @Override

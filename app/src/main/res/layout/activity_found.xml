@@ -12,11 +12,36 @@
             android:layout_height="0dp"
             android:layout_weight="0.3"
             android:weightSum="2">
-            <TextView
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="Title" />
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Found"
+                    android:id="@+id/textView5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:id="@+id/textView4" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editFoundDescriptionText" />
+
+            </LinearLayout>
 
             <ImageButton
                 android:layout_weight="1"
@@ -26,17 +51,19 @@
                 android:layout_gravity="right"
                 android:src="@drawable/flatcameraicon"
                 />
+
         </LinearLayout>
         <TextView
             android:layout_weight=".1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Description" />
+            android:text="Tags" />
         <EditText
             android:layout_weight=".1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/editFoundDescriptionText"/>
+            android:id="@+id/editFoundTagsText"
+            android:singleLine="true" />
         <Button
             android:id="@+id/locater"
             android:layout_weight=".1"
@@ -52,13 +79,15 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="text" />
+                android:text="Latitude"
+                android:gravity="center_vertical|center" />
             <EditText
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/txtLat"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:gravity="center_vertical" />
 
         </LinearLayout>
         <LinearLayout
@@ -70,13 +99,15 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="text" />
+                android:text="Longitude"
+                android:gravity="center_vertical|center" />
             <EditText
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/txtLon"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:gravity="center_vertical" />
 
         </LinearLayout>
         <LinearLayout
@@ -88,13 +119,15 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="text" />
+                android:text="Accuracy (meters)"
+                android:gravity="center_vertical|center" />
             <EditText
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/txtRad"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:gravity="center_vertical" />
 
         </LinearLayout>
 
@@ -108,14 +141,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Cancel"
-                android:id="@+id/foundCancelButton" />
+                android:text="Back"
+                android:id="@+id/foundBackButton" />
             <Button
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:text="Search"
-                android:id="@+id/foundSearchButton" />
+                android:text="Submit"
+                android:id="@+id/foundSubmitButton" />
         </LinearLayout>
 
 </LinearLayout>

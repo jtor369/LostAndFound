@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import dk.iha.itsmap.f16.grp25.lostandfound.Datacontainers.Item;
 import dk.iha.itsmap.f16.grp25.lostandfound.Datacontainers.SearchResultsSingleton;
@@ -21,6 +24,7 @@ public class SearchResultsActivity extends AppCompatActivity {
     private static final String POSITIONINT = "SRPositionInt";
 
     private ListView resultsList;
+    private TextView resultsCountText;
     private SearchResultsListViewAdapter adapter;
 
 
@@ -30,6 +34,7 @@ public class SearchResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
         resultsList = (ListView) findViewById(R.id.resultsList);
+        resultsCountText = (TextView) findViewById(R.id.resultsCountText);
 
 
 
@@ -69,6 +74,7 @@ public class SearchResultsActivity extends AppCompatActivity {
     {
         adapter = new SearchResultsListViewAdapter(resultsList, this, ServerService.getResults() );
         /*SearchResultsSingleton.getInstance().getSearchResults()*/
+        resultsCountText.setText(Integer.toString(adapter.getCount()));
         resultsList.setAdapter(adapter);
     }
 
