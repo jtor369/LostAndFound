@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ public class SRListItemSelected {
         txtTags = (TextView) view.findViewById(R.id.txtTags);
         txtTime = (TextView) view.findViewById(R.id.txtTime);
         txtLocation = (TextView) view.findViewById(R.id.txtLocation);
+
         btnClick = (Button) view.findViewById(R.id.btnClick);
 
         if (item.thumbnail != null) {

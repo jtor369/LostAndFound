@@ -9,10 +9,33 @@
     <string name="lost_activity">Lost</string>
     <string name="description">Describe the Item here</string>
     <string name="found_activity">Found</string>
+
     <string name="server_address">LostAndFoundServer.example</string>
+    <string name="serveraddress">Server Address</string>
+
     <string name="server_subdir">LostFoundDBHelper</string>
     <string name="server_search_script">lostSearch.php</string>
     <string name="server_upload_script">uploadFound.php</string>
+
     <string name="title_activity_settings">SettingsActivity</string>
+
     <string name="searchresults">Search Results:</string>
+
+    <string name="Item_time">Time</string>
+    <string name="Item_tags">Tags</string>
+
+    <string name="Item_description">Description</string>
+
+    <string name="Item_location">Location</string>
+
+
+    <string name="search">Search</string>
+    <string name="back">Back</string>
+    <string name="getlocation">Get Location</string>
+    <string name="submit">Submit</string>
+
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="radius">Radius (meters)</string>
+    <string name="accuracy">Accuracy (meters)</string>
 </resources>

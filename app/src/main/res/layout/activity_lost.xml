@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Lost" />
+                android:text="@string/lost_activity" />
 
             </LinearLayout>
         </LinearLayout>
@@ -47,7 +47,7 @@
         android:layout_weight=".1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Tags" />
+        android:text="@string/Item_tags" />
     <EditText
         android:layout_weight=".1"
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:layout_weight=".1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Get Location" />
+        android:text="@string/getlocation" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Latitude"
+            android:text="@string/latitude"
             android:gravity="center_vertical|center" />
         <EditText
             android:layout_weight="1"
@@ -90,7 +90,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Longitude"
+            android:text="@string/longitude"
             android:gravity="center_vertical|center" />
         <EditText
             android:layout_weight="1"
@@ -110,7 +110,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Radius (meters)"
+            android:text="@string/radius"
             android:gravity="center_vertical|center" />
         <EditText
             android:layout_weight="1"
@@ -132,13 +132,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Back"
+            android:text="@string/back"
             android:id="@+id/lostBackButton" />
         <Button
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="Search"
+            android:text="@string/search"
             android:id="@+id/lostSearchButton" />
     </LinearLayout>
 </LinearLayout>

@@ -10,39 +10,108 @@
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal" />
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/imgThumbnail"
-        android:src="@mipmap/ic_launcher"
-        android:layout_x="14dp"
-        android:layout_y="14dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Time"
-        android:id="@+id/txtTime"
-        android:layout_x="17dp"
-        android:layout_y="301dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tags"
-        android:id="@+id/txtTags"
-        android:layout_x="17dp"
-        android:layout_y="211dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Description"
-        android:id="@+id/txtDescriptionFinal"
-        android:layout_x="15dp"
-        android:layout_y="131dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/Item_time"
+                    android:id="@+id/textView12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:id="@+id/textView14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Time"
+                    android:id="@+id/txtTime"
+                    android:layout_x="17dp"
+                    android:layout_y="301dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/Item_tags"
+                    android:id="@+id/textView11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:id="@+id/textView13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Tags"
+                    android:id="@+id/txtTags"
+                    android:layout_x="17dp"
+                    android:layout_y="211dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/Item_description"
+                    android:id="@+id/textView10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Description"
+                    android:id="@+id/txtDescriptionFinal"
+                    android:layout_x="15dp"
+                    android:layout_y="131dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imgThumbnail"
+            android:src="@mipmap/ic_launcher"
+            android:layout_x="14dp"
+            android:layout_y="14dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
