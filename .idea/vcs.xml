@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/volley" vcs="" />
+=======
+>>>>>>> 3dc66b8a5ec27d8395a3613433701671396d23c3
   </component>
 </project>
